@@ -1,0 +1,844 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Markdown的链接中存在括号现有这样一个链接: 1https://msdn.microsoft.com/en-us/library/windows/desktop/ms649013(v=vs.85).aspx 可以看出这个链接中有右括号”)”，这样的链接在马克飞象中可以正常显示，但是在hexo中当放进链接的”()”里时，这个链接中的右括号”)”会与开端的”(“配套解析，导致链接不被正确解析。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo设置大全">
+<meta property="og:url" content="http://isfeasible.cn/2017/05/16/Hexo设置大全/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Markdown的链接中存在括号现有这样一个链接: 1https://msdn.microsoft.com/en-us/library/windows/desktop/ms649013(v=vs.85).aspx 可以看出这个链接中有右括号”)”，这样的链接在马克飞象中可以正常显示，但是在hexo中当放进链接的”()”里时，这个链接中的右括号”)”会与开端的”(“配套解析，导致链接不被正确解析。">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/Markdown%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/hexo%E8%AF%AD%E8%A8%80.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/hexo%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E9%85%8D%E8%89%B2%E6%96%87%E4%BB%B6%E5%A4%B9%E8%B7%AF%E5%BE%84.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E4%BB%A3%E7%A0%81%E6%AE%B5%E9%A2%9C%E8%89%B2%E4%BF%AE%E6%94%B9%E7%BB%86%E8%8A%82.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8markdown%E6%9C%89%E9%97%AE%E9%A2%98.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8%E9%A1%B5%E9%9D%A2%E6%9C%89%E9%97%AE%E9%A2%98.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8Markdown%E6%97%A0%E9%97%AE%E9%A2%98.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8%E9%A1%B5%E9%9D%A2%E6%97%A0%E9%97%AE%E9%A2%98.PNG">
+<meta property="og:updated_time" content="2017-05-17T03:06:45.512Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo设置大全">
+<meta name="twitter:description" content="Markdown的链接中存在括号现有这样一个链接: 1https://msdn.microsoft.com/en-us/library/windows/desktop/ms649013(v=vs.85).aspx 可以看出这个链接中有右括号”)”，这样的链接在马克飞象中可以正常显示，但是在hexo中当放进链接的”()”里时，这个链接中的右括号”)”会与开端的”(“配套解析，导致链接不被正确解析。">
+<meta name="twitter:image" content="http://olk4611ga.bkt.clouddn.com/Markdown%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '3B90KWWUAN',
+      apiKey: 'c5923731550e6ce089e5d4c5a879c669',
+      indexName: 'isfeasible_cn',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://isfeasible.cn/2017/05/16/Hexo设置大全/"/>
+
+
+
+
+
+  <title>Hexo设置大全 | Hexo</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4089503f68be74713f68c5871b2275b7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://isfeasible.cn/2017/05/16/Hexo设置大全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo设置大全</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T07:46:15+08:00">
+                2017-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Markdown的链接中存在括号"><a href="#Markdown的链接中存在括号" class="headerlink" title="Markdown的链接中存在括号"></a>Markdown的链接中存在括号</h2><p>现有这样一个链接:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://msdn.microsoft.com/en-us/library/windows/desktop/ms649013(v=vs.85).aspx</div></pre></td></tr></table></figure>
+<p>可以看出这个链接中有右括号”)”，这样的链接在马克飞象中可以正常显示，但是在hexo中当放进链接的”()”里时，这个链接中的右括号”)”会与开端的”(“配套解析，导致链接不被正确解析。</p>
+<blockquote>
+<p><img src="http://olk4611ga.bkt.clouddn.com/Markdown%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98.PNG" alt="链接无法正常解析"></p>
+</blockquote>
+<p>查看Url传输中特殊字符的编码如下</p>
+<table>
+<thead>
+<tr>
+<th>!</th>
+<th>*</th>
+<th>“</th>
+<th>‘</th>
+<th>(</th>
+<th>)</th>
+<th>;</th>
+<th>:</th>
+<th>@</th>
+<th>&amp;</th>
+<th>=</th>
+<th>+</th>
+<th>$</th>
+<th>,</th>
+<th>/</th>
+<th>?</th>
+<th>%</th>
+<th>#</th>
+<th>[</th>
+<th>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%21</td>
+<td>%2A</td>
+<td>%22</td>
+<td>%27</td>
+<td>%28</td>
+<td>%29</td>
+<td>%3B</td>
+<td>%3A</td>
+<td>%40</td>
+<td>%26</td>
+<td>%3D</td>
+<td>%2B</td>
+<td>%24</td>
+<td>%2C</td>
+<td>%2F</td>
+<td>%3F</td>
+<td>%25</td>
+<td>%23</td>
+<td>%5B</td>
+<td>%5D</td>
+</tr>
+</tbody>
+</table>
+<p>联想到把链接中的’)’换成它的Url编码，即”%29”,将上述链接换成这个样子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://msdn.microsoft.com/en-us/library/windows/desktop/ms649013(v=vs.85%29.aspx</div></pre></td></tr></table></figure>
+<p>在hexo中即可正常显示。<br>这是Url编码问题。<br><a href="http://www.w3school.com.cn/tags/html_ref_urlencode.html" target="_blank" rel="external">HTML URL 编码</a></p>
+<h2 id="hexo设置语言"><a href="#hexo设置语言" class="headerlink" title="hexo设置语言"></a>hexo设置语言</h2><p>应设置blog目录下的_config.yml里的language，而不是themes目录下的_config.yml文件里的language。<br><img src="http://olk4611ga.bkt.clouddn.com/hexo%E8%AF%AD%E8%A8%80.PNG" alt="hexo语言设置"><br>而且一定注意zh-CN与language: 之间必须有空格。</p>
+<h2 id="hexo代码段颜色设置"><a href="#hexo代码段颜色设置" class="headerlink" title="hexo代码段颜色设置"></a>hexo代码段颜色设置</h2><p><img src="http://olk4611ga.bkt.clouddn.com/hexo%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2.PNG" alt="代码颜色配色"></p>
+<p>在hexo博客系统中的代码配色建议如上所示。配置文件及路径如下图所示：<br><img src="http://olk4611ga.bkt.clouddn.com/%E9%85%8D%E8%89%B2%E6%96%87%E4%BB%B6%E5%A4%B9%E8%B7%AF%E5%BE%84.PNG" alt=""></p>
+<p>修改themem.styl文件<br><img src="http://olk4611ga.bkt.clouddn.com/%E4%BB%A3%E7%A0%81%E6%AE%B5%E9%A2%9C%E8%89%B2%E4%BF%AE%E6%94%B9%E7%BB%86%E8%8A%82.PNG" alt="代码段颜色修改细节"></p>
+<h2 id="空格引发的段、图表等等之类解析错误"><a href="#空格引发的段、图表等等之类解析错误" class="headerlink" title="空格引发的段、图表等等之类解析错误"></a>空格引发的段、图表等等之类解析错误</h2><p>在不同段之间一定要用空格分开，不然有可能导致解析错误。比如图表行直接与文字行紧挨着，图表将不能被正常解析，而在两行之间加入一个空行图表即可正常解析。</p>
+<ul>
+<li><strong>有问题图表代码及显示效果</strong><br><img src="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8markdown%E6%9C%89%E9%97%AE%E9%A2%98.PNG" alt="图表markdown有问题"><br><img src="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8%E9%A1%B5%E9%9D%A2%E6%9C%89%E9%97%AE%E9%A2%98.PNG" alt="图表页面有问题"></li>
+<li><strong>无问题图表代码及显示效果</strong><br><img src="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8Markdown%E6%97%A0%E9%97%AE%E9%A2%98.PNG" alt="图表markdown无问题"><br><img src="http://olk4611ga.bkt.clouddn.com/%E5%9B%BE%E8%A1%A8%E9%A1%B5%E9%9D%A2%E6%97%A0%E9%97%AE%E9%A2%98.PNG" alt="图表页面无问题"></li>
+</ul>
+<h2 id="Markdown-空格、换行的解决方法"><a href="#Markdown-空格、换行的解决方法" class="headerlink" title="Markdown 空格、换行的解决方法"></a>Markdown 空格、换行的解决方法</h2><p>因为Markdown文件最终会被解析成html，所以只要参考html中空格、换行的写法即可。在html中”<strong>&lt;br&nbsp;/&gt;</strong>“表示换行，”<strong>&amp;nbsp;</strong>“表示空格。</p>
+<h2 id="在页面显示换行、空格字符的解决方法"><a href="#在页面显示换行、空格字符的解决方法" class="headerlink" title="在页面显示换行、空格字符的解决方法"></a>在页面显示换行、空格字符的解决方法</h2><blockquote>
+<p>这个问题不是在页面中显示空格、换行效果，而是要在页面显示字符”<strong>&lt;br&nbsp;/&gt;</strong>“和”<strong>&amp;nbsp;</strong>“。</p>
+</blockquote>
+<p>这部分就是特殊字符在html中的显示问题，不同于上面说的链接中特殊字符的显示问题。</p>
+<table>
+<thead>
+<tr>
+<th>空格</th>
+<th>&amp;</th>
+<th>&lt;</th>
+<th>&gt;</th>
+<th>“</th>
+<th>‘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;nbsp;</td>
+<td>&amp;amp</td>
+<td>&amp;lt;</td>
+<td>&amp;gt;</td>
+<td>&amp;quot;</td>
+<td>&amp;qpos;</td>
+</tr>
+</tbody>
+</table>
+<p>所以如果想在页面上显示字符”<strong>&lt;br&nbsp;/&gt;</strong>“，那么Markdown的写法应该是：”<strong>&amp;lt;br&amp;nbsp;/&amp;gt;</strong>“；空格”<strong>&amp;nbsp;</strong>“对应的写法应该是：”<strong>&amp;amp;nbsp;</strong>“。</p>
+<h2 id="控制图片名称的显示与否"><a href="#控制图片名称的显示与否" class="headerlink" title="控制图片名称的显示与否"></a>控制图片名称的显示与否</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/15/Windows剪切板相关知识/" rel="next" title="Windows剪切板相关知识">
+                <i class="fa fa-chevron-left"></i> Windows剪切板相关知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/17/Hexo-Next-搭建Algolia搜索服务/" rel="prev" title="Hexo Next 搭建Algolia搜索服务">
+                Hexo Next 搭建Algolia搜索服务 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Sheng" />
+          <p class="site-author-name" itemprop="name">Sheng</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown的链接中存在括号"><span class="nav-number">1.</span> <span class="nav-text">Markdown的链接中存在括号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo设置语言"><span class="nav-number">2.</span> <span class="nav-text">hexo设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo代码段颜色设置"><span class="nav-number">3.</span> <span class="nav-text">hexo代码段颜色设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空格引发的段、图表等等之类解析错误"><span class="nav-number">4.</span> <span class="nav-text">空格引发的段、图表等等之类解析错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-空格、换行的解决方法"><span class="nav-number">5.</span> <span class="nav-text">Markdown 空格、换行的解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在页面显示换行、空格字符的解决方法"><span class="nav-number">6.</span> <span class="nav-text">在页面显示换行、空格字符的解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制图片名称的显示与否"><span class="nav-number">7.</span> <span class="nav-text">控制图片名称的显示与否</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sheng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

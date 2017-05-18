@@ -90,12 +90,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://isfeasible.cn/archives/index.html">
+<meta name="description" content="首先我们介绍GlobalAlloc函数。 调用GlobalAlloc函数分配内存，该函数会返回分配到的内存的句柄。  它返回的不是一个地址，而是一个句柄。    GlobalAlloc申请的内存有两种，一种是GAME_FIXED，一种是GAME_MOVABLE。两者的区别在于GAME_MOVABLE类型的内存是可移动的，比如此时堆里有好几块小内存，当再申请一块大内存时，操作系统会移动GAME_MO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GlobalLock &amp; GlobalUnlock">
+<meta property="og:url" content="http://isfeasible.cn/2017/05/14/GlobalLock-GlobalUnlock/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首先我们介绍GlobalAlloc函数。 调用GlobalAlloc函数分配内存，该函数会返回分配到的内存的句柄。  它返回的不是一个地址，而是一个句柄。    GlobalAlloc申请的内存有两种，一种是GAME_FIXED，一种是GAME_MOVABLE。两者的区别在于GAME_MOVABLE类型的内存是可移动的，比如此时堆里有好几块小内存，当再申请一块大内存时，操作系统会移动GAME_MO">
+<meta property="og:updated_time" content="2017-05-15T23:45:20.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="GlobalLock &amp; GlobalUnlock">
+<meta name="twitter:description" content="首先我们介绍GlobalAlloc函数。 调用GlobalAlloc函数分配内存，该函数会返回分配到的内存的句柄。  它返回的不是一个地址，而是一个句柄。    GlobalAlloc申请的内存有两种，一种是GAME_FIXED，一种是GAME_MOVABLE。两者的区别在于GAME_MOVABLE类型的内存是可移动的，比如此时堆里有好几块小内存，当再申请一块大内存时，操作系统会移动GAME_MO">
 
 
 
@@ -123,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://isfeasible.cn/archives/"/>
+  <link rel="canonical" href="http://isfeasible.cn/2017/05/14/GlobalLock-GlobalUnlock/"/>
 
 
 
 
 
-  <title>归档 | Hexo</title>
+  <title>GlobalLock & GlobalUnlock | Hexo</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,251 +291,151 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/17/Next主题设置大全/" itemprop="url">
-              
-                <span itemprop="name">Next主题设置大全</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-17T11:04:28+08:00"
-              content="2017-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/17/Hexo-tags/" itemprop="url">
-              
-                <span itemprop="name">Hexo tags</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-17T09:27:40+08:00"
-              content="2017-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/17/Hexo-Next-搭建Algolia搜索服务/" itemprop="url">
-              
-                <span itemprop="name">Hexo Next 搭建Algolia搜索服务</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-17T08:14:35+08:00"
-              content="2017-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/16/Hexo设置大全/" itemprop="url">
-              
-                <span itemprop="name">Hexo设置大全</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-16T07:46:15+08:00"
-              content="2017-05-16" >
-          05-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/15/Windows剪切板相关知识/" itemprop="url">
-              
-                <span itemprop="name">Windows剪切板相关知识</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-15T09:14:47+08:00"
-              content="2017-05-15" >
-          05-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/14/GlobalLock-GlobalUnlock/" itemprop="url">
-              
-                <span itemprop="name">GlobalLock & GlobalUnlock</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-14T18:05:01+08:00"
-              content="2017-05-14" >
-          05-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://isfeasible.cn/2017/05/14/GlobalLock-GlobalUnlock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GlobalLock & GlobalUnlock</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T18:05:01+08:00">
+                2017-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>首先我们介绍GlobalAlloc函数。</p>
+<p>调用GlobalAlloc函数分配内存，该函数会返回分配到的内存的<strong>句柄</strong>。</p>
+<blockquote>
+<p>它返回的不是一个地址，而是一个句柄。  </p>
+</blockquote>
+<p>GlobalAlloc申请的内存有两种，一种是<strong>GAME_FIXED</strong>，一种是<strong>GAME_MOVABLE</strong>。两者的区别在于GAME_MOVABLE类型的内存是可<strong>移动</strong>的，比如此时堆里有好几块小内存，当再申请一块大内存时，操作系统会移动GAME_MOVABLE类型的内存以合并出来一块大内存。正因为GAME_MOVABLE是可移动的，<strong>所以要用句柄表示，不能用内存地址标识</strong>。对于GAME_FIXED类型的内存，该函数返回回来的句柄就是内存指针，可以直接当内存指针使用。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HGLOBAL hgl = GlobalAlloc(GAME_MOVABLE, <span class="number">100</span> * <span class="keyword">sizeof</span>(WCHAR));</div></pre></td></tr></table></figure>
+<p>在我们使用GlobalAlloc申请到一块GAME_MOVABLE内存之后，如果我们想往这块内存中写入数据，那就必须先锁定这块内存。内存锁定函数是GlobalLock，返回一个地址指针，接受一个内存句柄作为参数。在写内存完成后还是GlobalUnlock这块内存。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LPWSTR lpstrcpy = (LPWSTR)GlobalLock(hgl);</div><div class="line"><span class="built_in">memcpy</span>(lpstrcpy, ntext, <span class="number">100</span> * <span class="keyword">sizeof</span>(WCHAR));</div><div class="line">GlobalUnlock(hgl);</div></pre></td></tr></table></figure>
+<p><br><br>Links:<br><a href="http://blog.csdn.net/sunstars2009918/article/details/7054963" target="_blank" rel="external">GlobalAlloc、GlobalLock和GlobalUnLock详解</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/15/Windows剪切板相关知识/" rel="prev" title="Windows剪切板相关知识">
+                Windows剪切板相关知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -539,6 +443,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -725,11 +633,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

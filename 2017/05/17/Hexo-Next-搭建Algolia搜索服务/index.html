@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="排序方法 平均情况 最好情况 最坏情况 辅助空间 稳定性     冒泡排序 O(n²) O(nlogn) O(n²) O(1) 稳定   简单选择 O(n²) O(n²) O(n²) O(1) 稳定   直接插入 O(n²) O(n) O(n²) O(1) 稳定   希尔排序 O(nlogn)~O(n²) O(n^1.3) O(n²) O(1) 不稳定   堆排序 O(nlogn) O(nl">
+<meta name="description" content="参考资料：http://theme-next.iissnan.com/third-party-services.html#local-search 按照上面的教程设置完成之后，还需要额外非常重要的一步就是设置站点配置文件下的url。 1url: http://isfeasible.cn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="table">
-<meta property="og:url" content="http://yoursite.com/2017/05/16/table/index.html">
+<meta property="og:title" content="Hexo Next 搭建Algolia搜索服务">
+<meta property="og:url" content="http://isfeasible.cn/2017/05/17/Hexo-Next-搭建Algolia搜索服务/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="排序方法 平均情况 最好情况 最坏情况 辅助空间 稳定性     冒泡排序 O(n²) O(nlogn) O(n²) O(1) 稳定   简单选择 O(n²) O(n²) O(n²) O(1) 稳定   直接插入 O(n²) O(n) O(n²) O(1) 稳定   希尔排序 O(nlogn)~O(n²) O(n^1.3) O(n²) O(1) 不稳定   堆排序 O(nlogn) O(nl">
-<meta property="og:updated_time" content="2017-05-15T22:36:09.967Z">
+<meta property="og:description" content="参考资料：http://theme-next.iissnan.com/third-party-services.html#local-search 按照上面的教程设置完成之后，还需要额外非常重要的一步就是设置站点配置文件下的url。 1url: http://isfeasible.cn">
+<meta property="og:updated_time" content="2017-05-17T00:17:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="table">
-<meta name="twitter:description" content="排序方法 平均情况 最好情况 最坏情况 辅助空间 稳定性     冒泡排序 O(n²) O(nlogn) O(n²) O(1) 稳定   简单选择 O(n²) O(n²) O(n²) O(1) 稳定   直接插入 O(n²) O(n) O(n²) O(1) 稳定   希尔排序 O(nlogn)~O(n²) O(n^1.3) O(n²) O(1) 不稳定   堆排序 O(nlogn) O(nl">
+<meta name="twitter:title" content="Hexo Next 搭建Algolia搜索服务">
+<meta name="twitter:description" content="参考资料：http://theme-next.iissnan.com/third-party-services.html#local-search 按照上面的教程设置完成之后，还需要额外非常重要的一步就是设置站点配置文件下的url。 1url: http://isfeasible.cn">
 
 
 
@@ -107,13 +107,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '3B90KWWUAN',
@@ -127,22 +127,32 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/16/table/"/>
+  <link rel="canonical" href="http://isfeasible.cn/2017/05/17/Hexo-Next-搭建Algolia搜索服务/"/>
 
 
 
 
 
-  <title>table | Hexo</title>
+  <title>Hexo Next 搭建Algolia搜索服务 | Hexo</title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4089503f68be74713f68c5871b2275b7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -200,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -210,7 +220,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -220,7 +230,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -233,7 +243,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            搜索
           </a>
         </li>
       
@@ -291,10 +301,10 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/table/">
+    <link itemprop="mainEntityOfPage" href="http://isfeasible.cn/2017/05/17/Hexo-Next-搭建Algolia搜索服务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Sheng">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -308,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">table</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo Next 搭建Algolia搜索服务</h1>
         
 
         <div class="post-meta">
@@ -318,10 +328,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-16T06:10:36+08:00">
-                2017-05-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T08:14:35+08:00">
+                2017-05-17
               </time>
             
 
@@ -355,171 +365,9 @@
       
 
       
-        <table>
-<thead>
-<tr>
-<th style="text-align:left">排序方法</th>
-<th style="text-align:left">平均情况</th>
-<th style="text-align:left">最好情况</th>
-<th style="text-align:left">最坏情况</th>
-<th style="text-align:left">辅助空间</th>
-<th style="text-align:left">稳定性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">冒泡排序</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(1)</td>
-<td style="text-align:left">稳定</td>
-</tr>
-<tr>
-<td style="text-align:left">简单选择</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(1)</td>
-<td style="text-align:left">稳定</td>
-</tr>
-<tr>
-<td style="text-align:left">直接插入</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(n)</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(1)</td>
-<td style="text-align:left">稳定</td>
-</tr>
-<tr>
-<td style="text-align:left">希尔排序</td>
-<td style="text-align:left">O(nlogn)~O(n²)</td>
-<td style="text-align:left">O(n^1.3)</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(1)</td>
-<td style="text-align:left">不稳定</td>
-</tr>
-<tr>
-<td style="text-align:left">堆排序</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(1)</td>
-<td style="text-align:left">不稳定</td>
-</tr>
-<tr>
-<td style="text-align:left">归并排序</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(n)</td>
-<td style="text-align:left">不稳定</td>
-</tr>
-<tr>
-<td style="text-align:left">快速排序</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(nlogn)~O(n)</td>
-<td style="text-align:left">不稳定</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Chen</th>
-<th style="text-align:left">Wang</th>
-<th style="text-align:left">Zou</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">冒泡排序</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(nlogn)</td>
-</tr>
-<tr>
-<td style="text-align:left">简单选择</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(n²)</td>
-</tr>
-<tr>
-<td style="text-align:left">直接插入</td>
-<td style="text-align:left">O(n²)</td>
-<td style="text-align:left">O(n)</td>
-</tr>
-<tr>
-<td style="text-align:left">希尔排序</td>
-<td style="text-align:left">O(nlogn)~O(n²)</td>
-<td style="text-align:left">O(n^1.3)</td>
-</tr>
-<tr>
-<td style="text-align:left">堆排序</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-</tr>
-<tr>
-<td style="text-align:left">归并排序</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-</tr>
-<tr>
-<td style="text-align:left">快速排序</td>
-<td style="text-align:left">O(nlogn)</td>
-<td style="text-align:left">O(nlogn)</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content from cell 1</td>
-<td>Content from cell 2</td>
-</tr>
-<tr>
-<td>Content in the first column</td>
-<td>Content in the second column</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>!</th>
-<th>*</th>
-<th>“</th>
-<th>‘</th>
-<th>(</th>
-<th>)</th>
-<th>;</th>
-<th>:</th>
-<th>@</th>
-<th>&amp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>!</td>
-<td>*</td>
-<td>“</td>
-<td>‘</td>
-<td>(</td>
-<td>)</td>
-<td>;</td>
-<td>:</td>
-<td>@</td>
-<td>&amp;</td>
-</tr>
-</tbody>
-</table>
-
+        <p>参考资料：<a href="http://theme-next.iissnan.com/third-party-services.html#local-search" target="_blank" rel="external">http://theme-next.iissnan.com/third-party-services.html#local-search</a></p>
+<p>按照上面的教程设置完成之后，还需要额外非常重要的一步就是设置站点配置文件下的url。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url: http://isfeasible.cn</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -555,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/05/16/Hexo设置大全/" rel="next" title="Hexo设置大全">
+                <i class="fa fa-chevron-left"></i> Hexo设置大全
               </a>
             
           </div>
@@ -564,6 +412,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/17/Hexo-tags/" rel="prev" title="Hexo tags">
+                Hexo tags <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -615,8 +467,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="Sheng" />
+          <p class="site-author-name" itemprop="name">Sheng</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -626,14 +478,23 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -676,18 +537,18 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Sheng</span>
 </div>
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
