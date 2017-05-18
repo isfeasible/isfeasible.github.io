@@ -90,14 +90,21 @@
 
 
 
+<meta name="description" content="Hexo 建立标签 设置站点主题配置文件，添加tags到menu中，如下 1234menu:  home: /  archives: /archives  tags: /tags  在Hexo站点目录下，在命令行敲击命令： 12$ cd your-hexo-site$ hexo new page tags  编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容">
 <meta name="keywords" content="Hexo,Next">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Next主题设置大全">
 <meta property="og:url" content="http://isfeasible.cn/2017/05/17/Next主题设置大全/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-05-17T03:04:28.754Z">
+<meta property="og:description" content="Hexo 建立标签 设置站点主题配置文件，添加tags到menu中，如下 1234menu:  home: /  archives: /archives  tags: /tags  在Hexo站点目录下，在命令行敲击命令： 12$ cd your-hexo-site$ hexo new page tags  编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/algolia-step-4.png">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1%E6%96%B0%E5%A2%9E%E7%AB%99%E7%82%B9.PNG">
+<meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/analytics-baidu-id.png">
+<meta property="og:updated_time" content="2017-05-18T10:42:48.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Next主题设置大全">
+<meta name="twitter:description" content="Hexo 建立标签 设置站点主题配置文件，添加tags到menu中，如下 1234menu:  home: /  archives: /archives  tags: /tags  在Hexo站点目录下，在命令行敲击命令： 12$ cd your-hexo-site$ hexo new page tags  编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容">
+<meta name="twitter:image" content="http://olk4611ga.bkt.clouddn.com/algolia-step-4.png">
 
 
 
@@ -363,7 +370,68 @@
       
 
       
-        
+        <h2 id="Hexo-建立标签"><a href="#Hexo-建立标签" class="headerlink" title="Hexo 建立标签"></a>Hexo 建立标签</h2><ol>
+<li><p>设置<strong>站点主题配置文件</strong>，添加tags到menu中，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Hexo站点目录下，在命令行敲击命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd your-hexo-site</div><div class="line">$ hexo new page tags</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: 标签</div><div class="line">date: 2014-12-22 12:39:04</div><div class="line">type: &quot;tags&quot;	</div><div class="line">---</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后new文件时可以这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo new --tags &quot;556&quot; &quot;try1&quot;</div><div class="line">or </div><div class="line">$ hexo new --tags &quot;556&quot; --tags &quot;557&quot; &quot;try1&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Hexo-Next-搭建Algolia搜索服务"><a href="#Hexo-Next-搭建Algolia搜索服务" class="headerlink" title="Hexo Next 搭建Algolia搜索服务"></a>Hexo Next 搭建Algolia搜索服务</h2><ol>
+<li>前往 Algolia 注册页面，注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用。</li>
+<li><p>Index 创建完成后，此时这个 Index 里未包含任何数据。 接下来需要安装 Hexo Algolia 扩展， 这个扩展的功能是搜集站点的内容并通过 API 发送给 Algolia。前往站点根目录，执行命令安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+</li>
+<li><p>在 Algolia 服务站点上找到需要使用的一些配置的值，包括 ApplicationID、Search API Key、 Admin API Key。注意，Admin API Key 需要保密保存。编辑<strong>站点配置文件</strong>，新增以下配置：（替换除了 chunkSize 以外的其他字段为在 Algolia 获取到的值。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">algolia:</div><div class="line">  applicationID: &apos;applicationID&apos;</div><div class="line">  apiKey: &apos;apiKey&apos;</div><div class="line">  adminApiKey: &apos;adminApiKey&apos;</div><div class="line">  indexName: &apos;indexName&apos;</div><div class="line">  chunkSize: 5000</div></pre></td></tr></table></figure>
+</li>
+<li><p>当配置完成，在站点根目录下执行 hexo algolia 来更新 Index。请注意观察命令的输出。<br><img src="http://olk4611ga.bkt.clouddn.com/algolia-step-4.png" alt="algolia-step-4.png"></p>
+</li>
+<li><p>更改<strong>主题配置文件</strong>，找到 Algolia Search 配置部分：（将 enable 改为 true 即可，根据需要你可以调整 labels 中的文本。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># Algolia Search</div><div class="line">algolia_search:</div><div class="line">  enable: false</div><div class="line">  hits:</div><div class="line">    per_page: 10</div><div class="line">  labels:</div><div class="line">    input_placeholder: Search for Posts</div><div class="line">    hits_empty: &quot;We didn&apos;t find any results for the search: $&#123;query&#125;&quot;</div><div class="line">    hits_stats: &quot;$&#123;hits&#125; results found in $&#123;time&#125; ms&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置<strong>站点配置文件</strong>下的url：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url: http://isfeasible.cn</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="使用自定义的样式"><a href="#使用自定义的样式" class="headerlink" title="使用自定义的样式"></a>使用自定义的样式</h2><ol>
+<li><p>找到<span class="TagSimilarButton">blog\themes\next\source\css\main.styl</span>，在最后添加：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//My Layer</div><div class="line">//--------------------------------------------------</div><div class="line">@import "_my/mycss";</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<span class="TagSimilarButton">blog\themes\next\source\css</span>下新建<span class="TagSimilarButton">_my</span>文件夹，再在这个文件夹下新建<span class="TagSimilarButton">mycss.styl</span></p>
+</li>
+</ol>
+<p><strong>例如</strong>：我想在我想在文章中添加个自定义样式的按钮，怎么做呢？</p>
+<ol>
+<li><p>打开新建的mycss.styl文件，在其中添加样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.TagSimilarButton</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#0f94bd</span>;</div><div class="line">    <span class="attribute">-moz-border-radius</span>:<span class="number">15px</span>;</div><div class="line">    <span class="attribute">-webkit-border-radius</span>:<span class="number">15px</span>;</div><div class="line">    <span class="attribute">border-radius</span>:<span class="number">15px</span>;</div><div class="line">    <span class="attribute">display</span>:inline-block;</div><div class="line">    <span class="attribute">cursor</span>:pointer;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#ffffff</span>;</div><div class="line">    <span class="attribute">font-family</span>:Arial;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">17px</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">11px</span> <span class="number">27px</span>;</div><div class="line">    <span class="attribute">text-decoration</span>:none;</div><div class="line">    <span class="attribute">text-shadow</span>:<span class="number">0px</span> <span class="number">1px</span> <span class="number">0px</span> <span class="number">#2f6627</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.myButton</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#5cbf2a</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.myButton</span><span class="selector-pseudo">:active</span> &#123;</div><div class="line">    <span class="attribute">position</span>:relative;</div><div class="line">    <span class="attribute">top</span>:<span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<span class="TagSimilarButton">.md文件</span>中，想要引用这个样式时这样写</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"TagSimilarButton"</span>&gt;</span>some text here<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>另外，在站点目录下应该新建一个文件用于记录自己新建的样式，暂定这个文件名为“自定义样式“。</p>
+<h2 id="二级三级标题颜色的设置"><a href="#二级三级标题颜色的设置" class="headerlink" title="二级三级标题颜色的设置"></a>二级三级标题颜色的设置</h2><p>由于在阅读时二级、三级标题不明显，先给他们加上颜色。因为页面中二级标题是<span class="TagSimilarButton">h2</span>，三级标题是<span class="TagSimilarButton">h3</span>。所以直接在<span class="TagSimilarButton">blog\themes\next\source\css_my\mycss.styl</span>里修改：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h2</span> &#123;</div><div class="line">	<span class="attribute">color</span>:<span class="number">#4176ce</span>;</div><div class="line">	<span class="attribute">font-weight</span>:normal;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h3</span> &#123;</div><div class="line">	<span class="attribute">color</span>:<span class="number">#734fdf</span>;</div><div class="line">	<span class="attribute">font-weight</span>:normal;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="NexT颜色与页面部件对应表"><a href="#NexT颜色与页面部件对应表" class="headerlink" title="NexT颜色与页面部件对应表"></a>NexT颜色与页面部件对应表</h2><p>颜色的值基本都存储在<span class="TagSimilarButton">blog\themes\next\source\css_variables\base.styl</span>中：（scheme: Mist）<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// Colors</div><div class="line">// colors for use across theme.</div><div class="line">// --------------------------------------------------</div><div class="line"></div><div class="line">$whitesmoke   = #f5f5f5       // 页面顶部和尾部北京</div><div class="line">$gainsboro    = #eee</div><div class="line">$gray-lighter = #ddd</div><div class="line">$grey-light   = #ccc</div><div class="line">$grey         = #6aa84f</div><div class="line">$grey-dark    = #999</div><div class="line">$grey-dim     = #666</div><div class="line">$black-light  = #000000       //正文字体颜色</div><div class="line">$black-dim    = #333</div><div class="line">$black-deep   = #222</div><div class="line">$red          = #ff2a2a</div><div class="line">$blue-bright  = #87daff</div><div class="line">$blue         = #0684bd</div><div class="line">$blue-deep    = #262a30</div><div class="line">$orange       = #fc6423</div><div class="line"></div><div class="line">// Background color for &lt;body&gt;</div><div class="line">$body-bg-color                = #eef4ed             // 正文背景颜色</div></pre></td></tr></table></figure></p>
+<h2 id="NexT添加百度统计"><a href="#NexT添加百度统计" class="headerlink" title="NexT添加百度统计"></a>NexT添加百度统计</h2><ol>
+<li><p>申请百度账号，在管理下新增站点，填写相关信息。<br><img src="http://olk4611ga.bkt.clouddn.com/%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1%E6%96%B0%E5%A2%9E%E7%AB%99%E7%82%B9.PNG" alt="百度统计新增站点"></p>
+</li>
+<li><p>复制百度给的id<br><img src="http://olk4611ga.bkt.clouddn.com/analytics-baidu-id.png" alt="百度统计id"></p>
+</li>
+<li><p>编辑主题配置文件，修改字段 baidu_analytics，值设置成你的百度统计脚本 id。</p>
+</li>
+<li><p>过20分钟后即可生效。</p>
+</li>
+</ol>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p><a href="http://olk4611ga.bkt.clouddn.com/NexT%E6%96%87%E4%BB%B6%E6%B1%87%E6%80%BB.zip" target="_blank" rel="external">NexT样式文件汇总</a><br><a href="http://www.atool.org/colorpicker.php" target="_blank" rel="external">颜色查询网站</a></p>
+
       
     </div>
 
@@ -407,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/17/Hexo-tags/" rel="next" title="Hexo tags">
-                <i class="fa fa-chevron-left"></i> Hexo tags
+              <a href="/2017/05/16/Hexo设置大全/" rel="next" title="Hexo设置大全">
+                <i class="fa fa-chevron-left"></i> Hexo设置大全
               </a>
             
           </div>
@@ -462,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -478,7 +555,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -491,7 +568,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -516,6 +593,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-建立标签"><span class="nav-number">1.</span> <span class="nav-text">Hexo 建立标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Next-搭建Algolia搜索服务"><span class="nav-number">2.</span> <span class="nav-text">Hexo Next 搭建Algolia搜索服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用自定义的样式"><span class="nav-number">3.</span> <span class="nav-text">使用自定义的样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二级三级标题颜色的设置"><span class="nav-number">4.</span> <span class="nav-text">二级三级标题颜色的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT颜色与页面部件对应表"><span class="nav-number">5.</span> <span class="nav-text">NexT颜色与页面部件对应表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT添加百度统计"><span class="nav-number">6.</span> <span class="nav-text">NexT添加百度统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资料"><span class="nav-number">7.</span> <span class="nav-text">相关资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
