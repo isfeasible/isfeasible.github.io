@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本文重点参考了微软关于Clipboard的开发文档。主要是两方面内容，一个是Clipboard Overviews，这部分主要介绍Clipboard的定义、格式和简单的操作；另一部分是Clipboard Reference，这部分主要介绍操作Clipboard的函数。   MSDN Clipboard链接  Clipboard OverviewsDefinitionClipboard主要是一块共享">
 <meta property="og:image" content="http://olk4611ga.bkt.clouddn.com/Clipboard%20Overview.PNG">
-<meta property="og:updated_time" content="2017-05-18T03:04:32.871Z">
+<meta property="og:updated_time" content="2017-05-18T07:55:39.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows剪切板相关知识">
 <meta name="twitter:description" content="本文重点参考了微软关于Clipboard的开发文档。主要是两方面内容，一个是Clipboard Overviews，这部分主要介绍Clipboard的定义、格式和简单的操作；另一部分是Clipboard Reference，这部分主要介绍操作Clipboard的函数。   MSDN Clipboard链接  Clipboard OverviewsDefinitionClipboard主要是一块共享">
@@ -373,7 +373,7 @@
 </blockquote>
 <h2 id="Clipboard-Overviews"><a href="#Clipboard-Overviews" class="headerlink" title="Clipboard Overviews"></a>Clipboard Overviews</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>Clipboard主要是一块<strong>共享内存</strong>，存储有相应的数据结构。windows的大多数应用程序都可以访问他们。既然共享内存是公开的，那么多个程序共同访问必然会引起冲突。因此，windows规定应用程序对剪切板的访问是<strong>独占式</strong>的，当一个应用程序使用OpenClipboard打开剪贴板之后，其他程序 就不可以再访问剪贴板，直至前一程序使用CloseClipboard关闭剪贴板 。通常我们使用剪贴板的时候不会感觉受其他程序的影响，这是因为剪贴板内的数据操作都是在内存中进行的，速度非常快。但是，我们在对剪贴板编程的时候要注意以下两点：</p>
 <ul>
-<li>每次使用完剪贴板之后一定要记得使用CloseClipBoard关闭它；</li>
+<li>每次使用完剪贴板之后一定要记得使用<span class="KeyWord">CloseClipBoard</span>关闭它；</li>
 <li>在OpenClipboard和CloseClipboard之间不要放置耗时很长的代码，以免影响其他程序正常工作。</li>
 </ul>
 <h3 id="Clipboard-Formats"><a href="#Clipboard-Formats" class="headerlink" title="Clipboard Formats"></a>Clipboard Formats</h3><ul>
@@ -402,7 +402,7 @@
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> html_id = <span class="number">0</span>;</div><div class="line"><span class="keyword">if</span> (!html_id) html_id = RegisterClipboardFormat(<span class="string">"HTML Format"</span>);</div></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> filename_id = <span class="number">0</span>;</div><div class="line"><span class="keyword">if</span> (!filename_id) filename_id = RegisterClipboardFormat(<span class="string">"FileName"</span>);</div></pre></td></tr></table></figure>
-<p>MSDN官方文档并没有具体有哪些Registered Formats，但是windows多个程序之间又约定了一些特点的数据类型来相互传递参数。至于怎么找到这些特定数据类型的Name，就只能调用EnumClipboardFormats()和GetClipboardFormatName()函数来遍历并打印出Format Name。</p>
+<p>MSDN官方文档并没有具体有哪些<span class="KeyWord">Registered Formats</span>，但是windows多个程序之间又约定了一些特点的数据类型来相互传递参数。至于怎么找到这些特定数据类型的Name，就只能调用EnumClipboardFormats()和GetClipboardFormatName()函数来遍历并打印出Format Name。</p>
 <blockquote>
 <p>关于EnumClipboardFormats()的请参考MSDN官方文档<br><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649038(v=vs.85%29.aspx" target="_blank" rel="external">EnumClipboardFormats function</a><br><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms649040(v=vs.85%29.aspx" target="_blank" rel="external">GetClipboardFormatName function</a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> clipboard_format;</div><div class="line">clipboard_format = EnumClipboardFormats(<span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="keyword">int</span> count = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span> (clipboard_format)&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"Im in Enum %d\n"</span>, count++);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"clipboard_format is : %d\n"</span>, clipboard_format);</div><div class="line">	</div><div class="line">	<span class="keyword">char</span> formatName[<span class="number">50</span>];</div><div class="line">	GetClipboardFormatName(clipboard_format, formatName, <span class="keyword">sizeof</span>(formatName));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"The ClipboardFormatName is %s\n"</span>, formatName);</div><div class="line">		</div><div class="line">	clipboard_format = EnumClipboardFormats(clipboard_format);</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"Enum ends!\n"</span>);</div></pre></td></tr></table></figure></p>
 </blockquote>
